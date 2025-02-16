@@ -111,6 +111,15 @@ a {
   flex: 1;
 }
 
+@media only screen and (max-width: 768px) {
+  .profile {
+    margin-bottom: 0;
+  }
+  .group-3 {
+    flex-direction: column;
+  }
+}
+
 /* PROFILE */
 .profile-container {
   display: flex;
@@ -229,4 +238,19 @@ a {
 .social_item span:hover,
 .social_item span:focus-visible {
   color: var(--primary-color);
+}
+
+hr {
+  grid-column: 1/-1;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-top: 2px solid rgba(128, 128, 128, 0.229);
+}
+@media only screen and (max-width: 768px) {
+  hr {
+    margin: 0 auto;
+  }
 }
