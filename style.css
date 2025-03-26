@@ -1,256 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
-  --primary-color: #e43b12;
-  --text-color: #727171;
-}
-
-html {
-  font-size: 10px;
-}
-
-body {
-  font-family: Inter, sans-serif;
-  background: black;
-  color: white;
-}
-
-/* COMMON STYLES */
-img {
-  width: 250px;
-  border-radius: 50%;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.description {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--text-color);
-}
-
-.title {
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
-.item-pre {
-  font-size: 1.4rem;
-  color: var(--text-color);
-  font-weight: 300;
-}
-
-.item-title {
-  font-size: 1.6rem;
-  color: white;
-  font-weight: 500;
-  margin: 0.8rem 0;
-}
-
-.item-sub {
-  font-size: 1.4rem;
-  color: var(--text-color);
-  font-weight: 400;
-}
-
-/* LAYOUTS */
-.wrapper {
-  max-width: 1000px;
-  width: 90%;
-  margin: 0 auto;
-  display: grid;
-  padding: 5rem;
-  background: #070707;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-}
-
-@media only screen and (max-width: 768px) {
-  .wrapper {
-    width: 100%;
-    grid-template-columns: 1fr;
-    padding: 3rem;
-    gap: 7rem;
+    --primary: #357abf;
+    --text: #191f36;
+    --background: #f9fafb;
+    --link: #357abf;
   }
-}
-
-.profile {
-  grid-column: 1 / -1;
-  margin-bottom: 2rem;
-}
-
-.group-1,
-.group-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-
-.group-3 {
-  max-width: 700px;
-  width: 100%;
-  margin: 0 auto;
-  grid-column: 1/-1;
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
-}
-.group-3 > div {
-  flex: 1;
-}
-
-@media only screen and (max-width: 768px) {
-  .profile {
-    margin-bottom: 0;
+  
+  [data-theme='dark'] {
+    --primary: #357abf;
+    --text: #f1f5f9;
+    --background: #0f172a;
+    --link: #93c5fd;
   }
-  .group-3 {
-    flex-direction: column;
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    transition: background 0.3s, color 0.3s;
   }
-}
-
-/* PROFILE */
-.profile-container {
-  display: flex;
-  gap: 2rem;
-}
-
-.profileImg {
-  max-width: 250px;
-}
-
-.profile-name-firstName {
-  color: white;
-  font-weight: 200;
-  font-size: clamp(2rem, 8vw, 4rem);
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: -0.8rem;
-}
-
-.profile-name-lastName {
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: clamp(2.5rem, 15vw, 7rem);
-  text-transform: uppercase;
-  display: block;
-}
-
-.profile-title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.download-btn {
-  display: block;
-  text-decoration: underline;
-  font-size: 1.6rem;
-  margin-top: 1rem;
-}
-
-.download-btn:hover,
-.download-btn:focus-visible {
-  color: var(--primary-color);
-}
-
-@media only screen and (max-width: 768px) {
-  .profile-container {
-    flex-direction: column;
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
   }
-}
-
-/* Expertise */
-.skill-list {
-  margin-top: 1rem;
-  margin-left: 2rem;
-  line-height: 2;
-}
-
-/* WHAT IVE LEARNED */
-.edu-item {
-  margin-top: 2rem;
-  padding-left: 0.25rem;
-}
-
-/* INTERESTS */
-.interest-items {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.interest-item {
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding-left: 0.25rem;
-  color: var(--text-color);
-}
-
-.interest-item svg {
-  width: 2rem;
-}
-
-.value p {
-  margin-top: 2rem;
-}
-
-/* Experience */
-.exp-item {
-  margin-top: 2rem;
-  padding-left: 0.25rem;
-}
-
-.vz {
-  color: var(--primary-color);
-}
-
-/* socials */
-.social_items {
-  margin-top: 2rem;
-}
-.social_item {
-  margin-top: 1.5rem;
-  font-size: 2rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: flex-start;
-  color: var(--text-color);
-}
-.social_item span:hover,
-.social_item span:focus-visible {
-  color: var(--primary-color);
-}
-
-hr {
-  grid-column: 1/-1;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 5rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-top: 2px solid rgba(128, 128, 128, 0.229);
-}
-@media only screen and (max-width: 768px) {
-  hr {
-    margin: 0 auto;
+  h1 { font-size: 2rem; font-weight: 700; }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: var(--primary);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
   }
-}
+  h3 { font-weight: 600; margin-top: 1rem; }
+  a { color: var(--link); text-decoration: none; }
+  .contact, .links { margin: 1rem 0; font-size: 0.9rem; }
+  .tagline { margin-top: 0.5rem; font-style: italic; color: #555; }
+  ul { margin-top: 0.5rem; padding-left: 1.2rem; }
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  .button:hover { background: #2d6cb0; }
+  section + section { margin-top: 2rem; }
+  .job-title { font-weight: 600; color: var(--text); }
+  .job-company { font-style: italic; color: #666; }
+  .job-dates { font-size: 0.85rem; color: #999; }
+  
